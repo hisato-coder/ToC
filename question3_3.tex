@@ -1,0 +1,144 @@
+\begin{frame}
+
+\frametitle{充足可能性}
+
+ブール式$\phi$が充足可能とは，$\phi=1$となるような変数への$0$と$1$の割り当てが存在すること．
+
+つまり，\textcolor{red}{$\phi=1$となる$x_{35}$，$x_{36}$，$x_{37}$の組み合わせを一つ以上挙げる}ことで証明可能．
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{充足可能の証明}
+
+連言標準形ブール式$\phi$は充足可能である．実際，
+
+$x_{35}=1$，$x_{36}=0$，$x_{37}=0$のとき，
+
+\begin{align}\displaystyle
+\phi &= (1\lor0\lor0) \land (\lnot1\lor\lnot0) \land (\lnot0\lor\lnot0) \land (\lnot1\lor\lnot0) \notag \\
+&= 1 \land 1 \land 1 \land 1 \notag \\
+&= 1\notag
+\end{align}
+
+となり，$\phi=1$となる$x_{35}$，$x_{36}$，$x_{37}$の組み合わせが存在する．
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+$\phi = (x_{35}\lor x_{36}\lor x_{37}) \land (\lnot x_{35}\lor\lnot x_{36}) \land (\lnot x_{36}\lor\lnot x_{37}) \land (\lnot x_{35}\lor\lnot x_{37})$
+
+より，
+
+$\phi=0 \Leftrightarrow (x_{35}\lor x_{36}\lor x_{37}=0) \text{または} (\lnot x_{35}\lor\lnot x_{36}=0) \text{または} (\lnot x_{36}\lor\lnot x_{37}=0) \text{または} (\lnot x_{35}\lor\lnot x_{37}=0)$
+
+である．
+
+ここで，$\phi=0$となる$x_{35}$，$x_{36}$，$x_{37}$の組み合わせを考える．
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+(i) $x_{35}\lor x_{36}\lor x_{37}=0$になる組み合わせは，
+
+\[
+\begin{array}{c|c|c|c}
+x_{35} & x_{35} & x_{35} & \phi \\
+\hline
+0 & 0 & 0 & 0 \\
+ &  &  &  \\
+ &  &  &  \\
+ &  &  &  \\
+ &  &  &  \\
+\end{array}
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+(ii) $\lnot x_{35}\lor\lnot x_{36}=0$になる組み合わせは，
+
+\[
+\begin{array}{c|c|c|c}
+x_{35} & x_{35} & x_{35} & \phi \\
+\hline
+0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+ &  &  &  \\
+ &  &  &  \\
+1 & 1 & 1 & 0 \\
+\end{array}
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+(iii) $\lnot x_{36}\lor\lnot x_{37}=0$になる組み合わせは，
+
+\[
+\begin{array}{c|c|c|c}
+x_{35} & x_{35} & x_{35} & \phi \\
+\hline
+0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+ &  &  &  \\
+1 & 1 & 1 & 0 \\
+\end{array}
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+(iv) $\lnot x_{35}\lor\lnot x_{37}=0$になる組み合わせは，
+
+\[
+\begin{array}{c|c|c|c}
+x_{35} & x_{35} & x_{35} & \phi \\
+\hline
+0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 \\
+\end{array}
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{論理値表の作成}
+
+これで$\phi=0$となる全ての組み合わせが分かった．
+
+これ以外の場合は，$\phi\neq0$，つまり$\phi=1$となる．したがって，
+
+\[
+\begin{array}{c|c|c|c}
+x_{35} & x_{35} & x_{35} & \phi \\
+\hline
+1 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+\end{array}
+\]
+
+が答えとなる．
+\end{frame}
