@@ -1,0 +1,49 @@
+\documentclass{beamer}
+\usepackage{luatexja} % 日本語環境用
+
+\usetheme[nologo]{KUT}
+
+\title{計算理論課題a1}
+\institute{高知工科大学 \quad 情報学群}
+\date{\today}
+
+\begin{document}
+%% 解説ここから
+\begin{frame}{Question 2: (5) $L_2 \cap L_3$ の要素数}
+  \textbf{問題:} $L_2 \cap L_3$ の要素数を答えなさい。
+  
+  \vspace{1em}
+  $L_2 \cap L_3$ は「$aba$ を部分文字列として含み、かつ回文である、長さ5以下の文字列」の集合である。
+
+  \begin{exampleblock}{解答}
+    \begin{itemize}
+      \item $|w| = 3$の場合: $aba$ のみ → 1個
+      \item $|w| = 4$の場合: 回文であるため、$xaba$ や $abax$ は回文にならない → 0個
+      \item $|w| = 5$の場合: 
+      \begin{itemize}
+        \item $abaxy$ の形: $ababa$ → 1個
+        \item $xabax$ の形: $aabaa, babab, cabac$ → 3個
+        \item $xyaba$ の形: $ababa$ → 重複 → 0個 
+        合計: 4個
+      \end{itemize}
+      よって、$L_2 \cap L_3$ の要素数は$1 + 0 + 4 = 5$ 個
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Question 2: (6) $L_4$ の要素数}
+  \textbf{問題:} $L_4$ の要素数を答えなさい。
+  
+  \vspace{1em}
+  $L_4 = \{xy \mid x \in L_2, y \in L_3, \text{ and } |y| = 3\}$ であるため、$L_2$ の要素数と、$L_3$ の長さ3の要素数を掛け合わせることで求めることができる。
+
+  \begin{exampleblock}{解答}
+    \begin{itemize}
+    \item $L_2$ の要素数は (2) で求めた33個。
+    \item $L_3$ の長さ3の回文は$xyx$の形 → $3^2 = 9$ 個。
+    \end{itemize}
+    よって、$L_4$ の要素数は $33 \times 9 = 297$ 個。
+   \end{exampleblock}
+\end{frame}
+%% ここまで解説
+\end{document}
