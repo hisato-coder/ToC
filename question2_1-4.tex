@@ -1,3 +1,4 @@
+\section{Question 2}
 % (1) L1 の要素数
 \begin{frame}
   \frametitle{Question 2: (1) $L_1$ の要素数}
@@ -6,11 +7,11 @@
   
   $L_1$ は $\Sigma = \{a, b, c\}$ 上の長さ 5 以下のすべての文字列の集合である。
   
-  \begin{block}{解答}
+  \begin{alertblock}{解答}
     空文字列も含めて、
     $|L_1| = 3^0 + 3^1 + 3^2 + 3^3 + 3^4 + 3^5 = 1 + 3 + 9 + 27 + 81 + 243 = 364$
     である。
-  \end{block}
+  \end{alertblock}
 
   \begin{itemize}
     \item $\Sigma = \{a, b, c\}$ なので、各文字は3通り。
@@ -28,10 +29,10 @@
   
   $L_2$ は $L_1$ のうち、部分文字列として ``aba'' を含むものの集合である。
   
-  \begin{block}{考え方}
+  \begin{alertblock}{考え方}
     $L_1$ の全要素から ``aba'' を含まないものを除外することで求める。
     すなわち、$|L_2| = |L_1| - $（``aba'' を含まない文字列の個数）
-  \end{block}
+  \end{alertblock}
 
   \begin{itemize}
     \item $L_1$ の要素数は $364$ 個（長さ0～5の全ての文字列）。
@@ -62,7 +63,11 @@
         \item ただし ``ababa'' は重複するので $-1$
         \item 合計 $9 + 9 + 9 - 1 = 26$
       \end{itemize}
-    \item よって、$1 + 6 + 26 = 33$ 個
+    \begin{alertblock}{解答}
+      \begin{center}
+        $1 + 6 + 26 = 33$ 個
+      \end{center}
+    \end{alertblock}
   \end{itemize}
   \vspace{1em}
 \end{frame}
@@ -74,11 +79,11 @@
   
   $L_3$ は $L_1$ のうち回文であるものの集合である。
 
-  \begin{block}{解答}
+  \begin{alertblock}{解答}
       \begin{center}
         \varepsilon, a, b, c, aa, bb, cc, aaa, aba, aca
       \end{center}
-  \end{block}
+  \end{alertblock}
 
   \begin{itemize}
     \item 回文とは、前から読んでも後ろから読んでも同じ文字列。
@@ -94,11 +99,11 @@
   \frametitle{Question 2: (4) $L_3$ の辞書式順序で最後の5要素}
   \textbf{問題:} $L_3$ の要素のうち辞書式順序で最後の5要素を列挙しなさい。
   
-  \begin{block}{解答}
+  \begin{alertblock}{解答}
       \begin{center}
         cbbbc,\ cbcbc,\ ccacc,\ ccbcc,\ ccccc
       \end{center}
-  \end{block}
+  \end{alertblock}
 
   \begin{itemize}
     \item アルファベット順で最後に来る回文を5つ並べている。
