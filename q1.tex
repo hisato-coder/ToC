@@ -1,0 +1,136 @@
+\section{Question 1}
+\begin{frame}
+    \frametitle{問題設定}
+    まず，問題で与えられている集合と関数を整理する．
+
+    \begin{block}{与えられているもの}
+        \begin{align*}
+            &A = \{2^k \mid k \in \mathbb{N}_0,\ k \le 7\}\\
+            &B = \{n \mid n \in \mathbb{N}_0,\ n \le 255\}\\
+            &f : \mathcal{P}(A) \to B\\
+            &f(X) = \sum_{a \in X} a
+        \end{align*}
+    \end{block}
+
+    \begin{itemize}
+        \item \(\mathbb{N}_0=\mathbb{N}\cup\{0\}\)
+        \item \(\mathcal{P}(A)\) は \(A\) のべき集合
+        \item \(f(X)\) は部分集合 \(X\) の要素をすべて足した値
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{(1) 集合 \(A\) の全要素}
+    定義をもう一度見ると，
+    \[
+        A=\{2^k \mid k \in \mathbb{N}_0,\ k \le 7\}
+    \]
+    である．ここで \(\mathbb{N}_0=\{0,1,2,3,\dots\}\) なので，
+    \[
+        k=0,1,2,3,4,5,6,7
+    \]
+    を代入すればよい．したがって，
+
+    \pause
+
+    \begin{align*}
+        2^0 &= 1, &
+        2^1 &= 2, &
+        2^2 &= 4, &
+        2^3 &= 8,  &
+        2^4 &= 16, &
+        2^5 &= 32, &
+        2^6 &= 64, &
+        2^7 &= 128
+    \end{align*}
+
+    \pause
+
+    \begin{alertblock}{答え}
+        \[
+            A=\{1,2,4,8,16,32,64,128\}
+        \]
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{(2) べき集合 \(\mathcal{P}(A)\) の要素数}
+    (1) より，集合 \(A\) の要素は 8 個である．
+
+    \begin{block}{べき集合の要素数}
+        要素数が \(n\) の集合 \(S\) について，
+        \[
+            |\mathcal{P}(S)|=2^n
+        \]
+        が成り立つ．
+    \end{block}
+
+    \pause
+
+    今回は \(|A|=8\) なので，
+    \[
+        |\mathcal{P}(A)|=2^8=256
+    \]
+    となる．
+
+    \begin{alertblock}{答え}
+        \[
+            |\mathcal{P}(A)|=256
+        \]
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{(3) \(f(\{1,4\})\) の値}
+    関数 \(f\) は，部分集合の要素をすべて足す写像である．
+
+    \begin{block}{関数の定義}
+        \[
+            f(X)=\sum_{a\in X} a
+        \]
+    \end{block}
+
+    \pause
+
+    \(X=\{1,4\}\) を代入すると，
+    \[
+        f(\{1,4\})=1+4=5
+    \]
+    である．
+
+    \begin{alertblock}{答え}
+        \[
+            f(\{1,4\})=5
+        \]
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{(4) \(f(X)=10\) となる部分集合 \(X\)}
+    \(f(X)=10\) とは，部分集合 \(X\) の要素の和が 10 になるという意味である．
+
+    \begin{block}{使える要素}
+        \[
+            A=\{1,2,4,8,16,32,64,128\}
+        \]
+    \end{block}
+
+    \pause
+
+    16 以上の要素は 10 より大きいため使えない．
+    そこで \(1,2,4,8\) の中から和が 10 になる組合せを探す．
+
+    \pause
+
+    \[
+        10=8+2
+    \]
+
+    \begin{alertblock}{答え}
+        \[
+            X=\{2,8\}
+        \]
+    \end{alertblock}
+\end{frame}
