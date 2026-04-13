@@ -1,7 +1,10 @@
 % --- Question 3 (1) のスライド ---
-\begin{frame}{Question 3 (1): グラフのフォーマルな記述}
+\begin{frame}
+    \frametitle{Question 3: (1) グラフのフォーマルな記述}
+    \textbf{問題:} $G_1$ のフォーマルな記述を答えなさい．
+    \vspace{0.3em}
+
     \begin{columns}[c] % 左右分割の開始
-        
         % 左側：画像（幅の40%）
         \begin{column}{0.4\textwidth}
             \centering
@@ -10,54 +13,156 @@
             \vspace{1em}
             \small{グラフ $G_1$}
         \end{column}
-        
+    
         % 右側：テキスト（幅の60%）
         \begin{column}{0.6\textwidth}
-            \begin{block}{問題 (1)}
-                $G_1$ のフォーマルな記述を答えなさい．
+            
+            \begin{block}{解答 (1-1)}
+                \textbf{頂点集合:}
+                \[ V_1 = \{1, 2, 3, 4, 5, 6, 7, 8\} \]
+                \textbf{辺集合:}
+                \begin{align*}
+                    E_1 = \{ & \{1, 6\}, \{1, 8\}, \\
+                                     & \{2, 5\}, \{2, 7\}, \\
+                                     & \{3, 6\}, \{3, 8\}, \\
+                                     & \{4, 5\}, \{4, 8\} \}
+                \end{align*}
             \end{block}
-            
-            \textbf{頂点集合 (Vertices):}
-            \[ V_1 = \{1, 2, 3, 4, 5, 6, 7, 8\} \]
-            
-            \textbf{辺集合 (Edges):}
-            \begin{align*}
-                E_1 = \{ & \{1, 6\}, \{1, 8\}, \\
-                         & \{2, 5\}, \{2, 7\}, \\
-                         & \{3, 6\}, \{3, 8\}, \\
-                         & \{4, 5\}, \{4, 8\} \}
-            \end{align*}
         \end{column}
-        
+    
+    \end{columns}
+\end{frame}
+
+% --- Question 3 (1) 補足：G1 のフォーマルな書き方 ---
+\begin{frame}
+    \frametitle{Question 3: (1) $G_1$ のフォーマルな書き方}
+
+    \begin{columns}[c]
+        \begin{column}{0.4\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{image/question3_matching.png}
+            \vspace{1em}
+            \small{グラフ $G_1$}
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \begin{block}{解答(1-2)}
+                \begin{align*}
+                    G_1 = ( & \{1, 2, 3, 4, 5, 6, 7, 8\}, \\
+                             & \{  \{1, 6\}, \{1, 8\}, \{2, 5\}, \{2, 7\}, \\
+                             & \{3, 6\}, \{3, 8\}, \{4, 5\}, \{4, 8\} \})
+                \end{align*}
+            \end{block}
+        \end{column}
     \end{columns}
 \end{frame}
 
 % --- Question 3 (2) のスライド ---
-\begin{frame}{Question 3 (2): 完全マッチング}
+\begin{frame}
+    \frametitle{Question 3: (2) 完全マッチング}
+    \textbf{問題:} $G_1$ の完全マッチングをすべて答えよ．
+    \vspace{0.3em}
+
     \begin{columns}[c]
-        
         \begin{column}{0.4\textwidth}
             \centering
             \includegraphics[width=\linewidth]{image/question3_matching.png}
         \end{column}
-        
+    
         \begin{column}{0.6\textwidth}
-            \begin{block}{問題 (2)}
-                $G_1$ の完全マッチングをすべて答えよ．
-            \end{block}
-            \textbf{【解法のロジック】}
+
+            \textbf{考え方の手順}
             \begin{itemize}
                 \item 頂点7の接続先は頂点2のみ $\Rightarrow$ $\{2, 7\}$ は必須．
                 \item 頂点5の接続先は2と4だが，2が埋まったため $\{4, 5\}$ も必須．
                 \item 残る頂点 $\{1, 3, 6, 8\}$ の組み合わせを検討．
             \end{itemize}
-            
-            \textbf{【解答】} 以下の2つ．
-            \begin{enumerate}
-                \item $M_1 = \{\{1, 6\}, \{2, 7\}, \{3, 8\}, \{4, 5\}\}$
-                \item $M_2 = \{\{1, 8\}, \{2, 7\}, \{3, 6\}, \{4, 5\}\}$
-            \end{enumerate}
+
+            \begin{block}{解答 (2)}
+                以下の3つ．
+                \begin{enumerate}
+                    \item $M_1 = \{\{1, 6\}, \{2, 7\}, \{3, 8\}, \{4, 5\}\}$
+                    \item $M_2 = \{\{1, 6\}, \{2, 8\}, \{3, 7\}, \{4, 5\}\}$
+                    \item $M_3 = \{\{1, 8\}, \{2, 7\}, \{3, 6\}, \{4, 5\}\}$
+                \end{enumerate}
+            \end{block}
         \end{column}
-        
+    
+    \end{columns}
+\end{frame}
+
+% --- Question 3 (2) 解法：1を6にマッチさせる場合 ---
+\begin{frame}
+    \frametitle{Question 3: (2) 解法ケース1（$1 \leftrightarrow 6$）}
+
+    \begin{columns}[c]
+        \begin{column}{0.4\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{image/question3_matching.png}
+            \vspace{0.8em}
+            \small{固定: $\{1,6\}$}
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \scriptsize
+            \begin{center}
+                各列はそれぞれ「頂点2の相手」「頂点3の相手」「頂点4の相手」を表す。
+            \end{center}
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                頂点2の相手 & 頂点3の相手 & 頂点4の相手 & 可否 \\
+                \hline
+                5 & 7 & 8 & 不可 \\
+                \hline
+                5 & 8 & 7 & 不可 \\
+                \hline
+                7 & 5 & 8 & 可 \\
+                \hline
+                7 & 8 & 5 & 不可 \\
+                \hline
+                8 & 5 & 7 & 不可 \\
+                \hline             
+                8 & 7 & 5 & 可 \\
+                \hline
+            \end{tabular}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Question 3 (2) 解法：1を8にマッチさせる場合 ---
+\begin{frame}
+    \frametitle{Question 3: (2) 解法ケース2（$1 \leftrightarrow 8$）}
+
+    \begin{columns}[c]
+        \begin{column}{0.4\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{image/question3_matching.png}
+            \vspace{0.8em}
+            \small{固定: $\{1,8\}$}
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \scriptsize
+            \begin{center}
+                各列はそれぞれ「頂点2の相手」「頂点3の相手」「頂点4の相手」を表す。
+            \end{center}
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                頂点2の相手 & 頂点3の相手 & 頂点4の相手 & 可否 \\
+                \hline
+                5 & 6 & 8 & 不可 \\
+                \hline
+                5 & 7 & 7 & 不可 \\
+                \hline
+                6 & 5 & 8 & 不可 \\
+                \hline
+                6 & 7 & 5 & 不可 \\
+                \hline
+                7 & 5 & 7 & 不可 \\
+                \hline
+                7 & 6 & 5 & 可 \\
+                \hline
+            \end{tabular}
+        \end{column}
     \end{columns}
 \end{frame}
