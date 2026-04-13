@@ -1,0 +1,40 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.lol
+*.dvi
+*.pdf
+*.xdv
+*.thm
+*.backup
+*.bak
+*.tmp
+*.synctex(busy)
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# ImageMagick temporary files
+magick-*
+
+# Other
+*~
+# End of file
