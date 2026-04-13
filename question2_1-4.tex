@@ -1,0 +1,107 @@
+% (1) L1 の要素数
+\begin{frame}
+  \frametitle{Question 2: (1) $L_1$ の要素数}
+  
+  \textbf{問題:} $L_1$ の要素数を答えなさい。
+  
+  $L_1$ は $\Sigma = \{a, b, c\}$ 上の長さ 5 以下のすべての文字列の集合である。
+  
+  \begin{block}{解答}
+    空文字列も含めて、
+    $|L_1| = 3^0 + 3^1 + 3^2 + 3^3 + 3^4 + 3^5 = 1 + 3 + 9 + 27 + 81 + 243 = 364$
+    である。
+  \end{block}
+
+  \begin{itemize}
+    \item $\Sigma = \{a, b, c\}$ なので、各文字は3通り。
+    \item 長さ0（空文字列）から長さ5まで、各長さごとに $3^n$ 通り（$n$は長さ）。
+    \item それぞれを合計して364個となる。
+  \end{itemize}
+\end{frame}
+
+% (2) L2 の要素数
+
+% (2-1) L2 の要素数（考え方と概要）
+\begin{frame}
+  \frametitle{Question 2: (2) $L_2$ の要素数（1/2）}
+  \textbf{問題:} $L_2$ の要素数を答えなさい。
+  
+  $L_2$ は $L_1$ のうち、部分文字列として ``aba'' を含むものの集合である。
+  
+  \begin{block}{考え方}
+    $L_1$ の全要素から ``aba'' を含まないものを除外することで求める。
+    すなわち、$|L_2| = |L_1| - $（``aba'' を含まない文字列の個数）
+  \end{block}
+
+  \begin{itemize}
+    \item $L_1$ の要素数は $364$ 個（長さ0～5の全ての文字列）。
+    \item $L_2$ は ``aba'' をどこかに含むもの。
+    \item 例えば ``aba'', ``ababa'', ``caba'', ``abac'' など。
+    \item ``aba'' を含まないものを全体から引くことで個数を求める。
+  \end{itemize}
+\end{frame}
+
+% (2-2) L2 の要素数（詳細な計算・具体例）
+\begin{frame}
+  \frametitle{Question 2: (2) $L_2$ の要素数（2/2）}
+  \textbf{詳細な計算（具体的な数え上げ）}
+
+  \begin{itemize}
+    \item \textbf{長さ3:} ``aba'' だけなので $1$ 個
+    \item \textbf{長さ4:}  
+      \begin{itemize}
+        \item 先頭に ``aba''：\ \texttt{aba*} の形 $\to$ 3通り
+        \item 後ろに ``aba''：\ \texttt{*aba} の形 $\to$ 3通り
+        \item 合計 $6$ 個
+      \end{itemize}
+    \item \textbf{長さ5:}
+      \begin{itemize}
+        \item 先頭に ``aba''：\ \texttt{aba**} の形 $3 \times 3 = 9$
+        \item 真ん中に ``aba''：\ \texttt{*aba*} の形 $3 \times 3 = 9$
+        \item 後ろに ``aba''：\ \texttt{**aba} の形 $3 \times 3 = 9$
+        \item ただし ``ababa'' は重複するので $-1$
+        \item 合計 $9 + 9 + 9 - 1 = 26$
+      \end{itemize}
+    \item よって、$1 + 6 + 26 = 33$ 個
+  \end{itemize}
+  \vspace{1em}
+\end{frame}
+
+% (3) L3 の辞書式順序で最初の10要素
+\begin{frame}
+  \frametitle{Question 2: (3) $L_3$ の辞書式順序で最初の10要素}
+  \textbf{問題:} $L_3$ の要素のうち辞書式順序で最初の10要素を列挙しなさい。
+  
+  $L_3$ は $L_1$ のうち回文であるものの集合である。
+
+  \begin{block}{解答}
+      \begin{center}
+        \varepsilon, a, b, c, aa, bb, cc, aaa, aba, aca
+      \end{center}
+  \end{block}
+
+  \begin{itemize}
+    \item 回文とは、前から読んでも後ろから読んでも同じ文字列。
+    \item 例えば ``aba'' や ``bab''、``ccbcc'' など。
+    \item 辞書式順序で並べている。
+    \item 空文字列（$\varepsilon$）も回文として含まれる。
+    \item 短いものから順に並ぶ。
+  \end{itemize}
+\end{frame}
+
+% (4) L3 の辞書式順序で最後の5要素
+\begin{frame}
+  \frametitle{Question 2: (4) $L_3$ の辞書式順序で最後の5要素}
+  \textbf{問題:} $L_3$ の要素のうち辞書式順序で最後の5要素を列挙しなさい。
+  
+  \begin{block}{解答}
+      \begin{center}
+        cbbbc,\ cbcbc,\ ccacc,\ ccbcc,\ ccccc
+      \end{center}
+  \end{block}
+
+  \begin{itemize}
+    \item アルファベット順で最後に来る回文を5つ並べている。
+    \item 長さが大きいほど後ろに並ぶ。
+  \end{itemize}
+\end{frame}
